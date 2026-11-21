@@ -128,7 +128,7 @@ Prince Jaiswal
 
 Learning and building projects in Full-Stack Web Development.
 
-GitHub: https://github.com/PrinceJaiswal5454
+GitHub: https://github.com/prince.jaiswal.dev
 
 ---
 
