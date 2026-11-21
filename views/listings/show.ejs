@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+
+<div class="card card-row show_card" >
+  <img src="<%=list.image%>" class="card-img-start show_card_img" alt="listing image">
+
+  <div class="card-body show_card_body">
+    <h4 class="card-title show_card_title"><b><%= list.title %></b></h4>
+    <p class="card-text show_card_text">
+        <ul style="list-style: none;">
+        
+            <li style=" margin-bottom: 0.9rem"><%= list.title  %></li>
+            
+            <li style=" margin-bottom: 0.9rem"><%= list.description  %></li>
+            <li style=" margin-bottom: 0.9rem"><sy style="color: rgb(5, 215, 5);">&#8377;</sy> <%= list.price.toLocaleString("en-IN")  %></li>
+            <li style=" margin-bottom: 0.9rem"><%= list.location  %></li>
+            <li style=" margin-bottom: 0.9rem"><%= list.country  %></li>
+             
+    </ul>  
+    
+    <div class="show_card_btns">
+    <form method="get" action="/listings/<%=list._id%>/edit">
+        <button class="btn edit-btn">EDIT</button>
+    </form>
+    <br>
+    <form method="post" action="/listings/<%=list._id%>?_method=DELETE">
+        <button class="btn del-btn">DELETE</button>
+    </form>
+    </div>
+
+    </p>
+
+    
+    
+  </div>
+</div>
+
+
+    
+    
+

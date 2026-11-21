@@ -1,0 +1,152 @@
+body{
+     font-family: "Plus Jakarta Sans", sans-serif;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+
+
+/* navbar */
+
+.navbar{
+    height: 5rem;
+    background-color: rgb(17, 17, 17);
+}
+
+.fa-route{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #ffffff !important;
+}
+
+
+/* footer */
+
+.footer{
+    background-color: rgb(255, 8, 8);
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.social-icons{
+    display: flex;
+    gap: 0.9rem;
+    font-size: 1.3rem;
+}
+
+.copy-brand{
+    text-align: center;
+}
+
+.privacy a {
+    text-decoration: none;
+    color: white;
+}
+
+.privacy a:hover {
+    text-decoration: underline;
+}
+
+
+/* cards */
+
+.card{
+    border: none !important;
+    margin-top: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0;
+    border: none !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+.col a{
+    text-decoration: none;
+}
+
+
+/* card effects */
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: #000000;
+}
+
+
+/* newform */
+
+.add-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+
+/* edit form */
+
+.edit-btns{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.edit-btn{
+    background-color: #fe424d;
+    border: none;
+    margin-right: 2rem;
+}
+
+.del-btn{
+    background-color: rgb(41, 41, 41);
+    border: none;
+}
+
+
+
+/* show card css */
+
+.show_card_img{
+    border-radius: 2rem;
+    object-fit: cover;
+    height: 31rem;
+    width: 60rem;
+    margin-right: 6rem;
+}
+
+.show_card_title{
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+
+.show_card_btns{
+    margin-top: 2rem;
+    display: flex;
+    justify-content:flex-end;
+}
