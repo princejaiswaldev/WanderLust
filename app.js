@@ -11,7 +11,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/WrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
-const {ListingSchema} = require("./schema.js");
+const {listingSchema} = require("./schema.js");
 
 
 //app configuration
@@ -89,10 +89,10 @@ app.get("/listings/new",(req,res) => {
 
 
 app.post("/listings/new", wrapAsync(async(req,res,next) => {
-
-    let result = ListingSchema.validate(req.body);
+    
+    let result = listingSchema.validate(req.body);
     if(result.error){
-        throw new ExpressError(404,result.error);
+        throw new ExpressError(400,result.error);
     }
 
     let {listing} = req.body;
@@ -120,14 +120,14 @@ app.get("/listings/:id/edit", wrapAsync(async (req,res) => {
 
 app.put("/listings/:id/edit", wrapAsync(async (req,res) => {
     
-    let result = ListingSchema.validate(req.body);
+    let result = listingSchema.validate(req.body);
     if(result.error){
-        throw new ExpressError(404,result.error);
+        throw new ExpressError(400,result.error);
     }
 
     let {id} = req.params;
-    
-    await List.findByIdAndUpdate(id,{...req.body});
+    let {listing} = req.body;
+    await List.findByIdAndUpdate(id,{...listing});
 
     res.redirect(`/listings/${id}/show`);
 }));
@@ -162,7 +162,9 @@ app.all("/{*splat}",(req,res,next) => {
 
 app.use((err,req,res,next) => {
     let {status=500,message="something went wrong"} = err;
+    console.log(err);
     res.status(status).render("Error.ejs",{message});
+
 });
 
 
