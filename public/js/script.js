@@ -11,6 +11,8 @@
         event.stopPropagation()
       }
 
+      form.classList.add('was-validated')
+
       for (const control of form.elements) {
         if (control.willValidate) {
           control.setAttribute('aria-invalid', String(!control.validity.valid))
